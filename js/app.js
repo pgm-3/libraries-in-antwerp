@@ -19,21 +19,22 @@ const app = {
     this.$library = document.querySelector("#library");
   },
   registerListeners() {
+    // user clicked on a link
     this.$navigation.addEventListener("click", (e) => {
       e.preventDefault();
     });
 
+    // user clicked on back or next in browser bar
     window.addEventListener("popstate", (e) => {});
   },
   async fetchLibraries() {
     const response = await fetch(JSON_PATH);
     const data = await response.json();
 
-    // fill up the array
-
-    // create navigation
-
-    // set active library and replace history
+    // fill up the libraries array
+    // call createNavigation
+    // call setActiveLibrary
+    // call addToHistory...
   },
   setActiveLibrary(id) {},
   addToHistory(isPush) {
