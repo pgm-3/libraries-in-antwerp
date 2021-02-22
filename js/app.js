@@ -75,7 +75,7 @@ const app = {
     const anchorTags = this.libraries.map((value) => {
       const name = value.attributes.naam;
       const id = value.attributes.GISID;
-      return `<a data-id="${id}" data-title=${name} href="${name.split(" ").join("-").toLowerCase()}">${name}</a>`;
+      return `<a data-id="${id}" data-title=${name} href="${slugify(name)}">${name}</a>`;
     });
     this.$navigation.innerHTML = anchorTags.join("");
   },
