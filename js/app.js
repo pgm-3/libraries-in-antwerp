@@ -75,10 +75,7 @@ const app = {
     const anchorTags = this.libraries.map((value) => {
       const name = value.attributes.naam;
       const id = value.attributes.GISID;
-      return `<a data-id="${id}" data-title=${name} href="${name
-        .split(" ")
-        .join("-")
-        .toLowerCase()}">${name}</a>`;
+      return `<a data-id="${id}" data-title=${name} href="${name.split(" ").join("-").toLowerCase()}">${name}</a>`;
     });
     this.$navigation.innerHTML = anchorTags.join("");
   },
@@ -99,21 +96,9 @@ const app = {
           ${lib.postcode} ${lib.gemeente}
         </address>
         <hr />
-        ${
-          lib.email
-            ? '<a href="mailto:' + lib.email + '">' + lib.email + "</a><br>"
-            : ""
-        }
-        ${
-          lib.telefoon
-            ? '<a href="tel:' + lib.telefoon + '">' + lib.telefoon + "</a><br>"
-            : ""
-        }
-        ${
-          lib.link
-            ? '<a href="' + lib.link + '" target="_blank">' + lib.link + "</a>"
-            : ""
-        }
+        ${lib.email ? '<a href="mailto:' + lib.email + '">' + lib.email + "</a><br>" : ""}
+        ${lib.telefoon ? '<a href="tel:' + lib.telefoon + '">' + lib.telefoon + "</a><br>" : ""} 
+        ${lib.link ? '<a href="' + lib.link + '" target="_blank">' + lib.link + "</a>" : ""}
     `;
     this.$library.innerHTML = libraryContent;
   },
